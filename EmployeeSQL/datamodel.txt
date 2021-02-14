@@ -1,0 +1,39 @@
+# Physical
+# https://app.quickdatabasediagrams.com/#/
+
+Employees
+-
+emp_no INT PK
+emp_title VARCHAR(255)
+birth_date DATE
+first_name VARCHAR(255)
+last_name VARCHAR(255)
+Sex VARCHAR(1)
+hire_date DATE
+
+Salaries
+-
+emp_no INT FK >- Employees.emp_no
+salary INT 
+
+
+Titles
+-
+title_id VARCHAR PK
+title VARCHAR(255)
+
+Departments
+-
+dept_no VARCHAR PK
+dept_name VARCHAR(255)
+
+Dept_emp
+-
+emp_no INT FK >- Employees.emp_no
+dept_no VARCHAR FK >- Departments.dept_no
+
+
+Dept_manager
+-
+dept_no VARCHAR FK >- Departments.dept_no
+emp_no INT FK >- Employees.emp_no
